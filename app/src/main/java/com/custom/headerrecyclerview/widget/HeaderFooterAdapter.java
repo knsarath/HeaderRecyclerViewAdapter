@@ -22,7 +22,6 @@ public abstract class HeaderFooterAdapter<T> extends RecyclerView.Adapter<Header
         final View header = headerResId != NO_HEADER ? LayoutInflater.from(context).inflate(headerResId, null) : null;
         final View footer = footerResId != NO_FOOTER ? LayoutInflater.from(context).inflate(footerResId, null) : null;
         init(list, header, footer);
-
     }
 
     public HeaderFooterAdapter(View headerView, View footerView, List<T> list) {

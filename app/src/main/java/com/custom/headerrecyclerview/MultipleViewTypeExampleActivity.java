@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import com.custom.headerrecyclerview.adapters.MultpleViewTypeAdapter;
 
@@ -18,7 +19,10 @@ public class MultipleViewTypeExampleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_multiple_view_type_example);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new MultpleViewTypeAdapter(this.getBaseContext(), R.layout.header, R.layout.footer, getList()));
+        final MultpleViewTypeAdapter adapter = new MultpleViewTypeAdapter(this.getBaseContext(), R.layout.header, R.layout.footer, getList());
+        recyclerView.setAdapter(adapter);
+        ((TextView) adapter.getFooterView().findViewById(R.id.txt)).setText("This is footer");
+        ((TextView) adapter.getHeaderView().findViewById(R.id.txt)).setText("This is Header");
     }
 
     private List<String> getList() {
