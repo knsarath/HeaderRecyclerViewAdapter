@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".SimpleRecyclerViewActivity">
         </activity>
+        <activity android:name=".MultipleViewTypeExampleActivity">
+        </activity>
     </application>
 
 </manifest>
